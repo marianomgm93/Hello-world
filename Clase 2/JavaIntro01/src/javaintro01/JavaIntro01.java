@@ -21,8 +21,8 @@ calcule la suma de los dos. El programa deberá después mostrar el resultado de
         int num2=leer.nextInt();
     
         System.out.println(num1+num2);
-            
-
+        
+        
     }
     
 }
