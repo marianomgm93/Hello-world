@@ -18,7 +18,7 @@ public class Ejercicio4 {
         boolean primo=true;
         
         for (int i = 2; i < Math.sqrt(num); i++) {
-            if (num%i==0) {
+            if (num%i==0||num==1) {
                 primo=false;
                 break;
             }
