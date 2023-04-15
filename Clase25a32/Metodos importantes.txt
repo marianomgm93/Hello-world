@@ -1,0 +1,13 @@
+static public void presioneUnaTecla()
+      { 
+          String seguir;
+          Scanner teclado = new Scanner(System.in);
+          System.out.println("Presione una tecla para continuar...");
+          try
+            {
+             seguir = teclado.nextLine();
+            }   
+         catch(Exception e)
+          {}  
+     }
+
