@@ -92,11 +92,11 @@ public class AhorcadoServicio {
     public boolean encontradas(String letra, Ahorcado ahorcado) {
         System.out.println("Se han encontrado " + this.letrasEncontradas.length());
         for (int i = 0; i < ahorcado.getPalabra().length; i++) {
-            System.out.println(letrasEncontradas.charAt(i));
+            System.out.println(this.letrasEncontradas.charAt(i));
 
         }
         for (int i = 0; i < this.letrasEncontradas.length(); i++) {
-            if (letra.equalsIgnoreCase("" + letrasEncontradas.charAt(i))) {
+            if (letra.equalsIgnoreCase("" + this.letrasEncontradas.charAt(i))) {
                 return true;
             }
         }

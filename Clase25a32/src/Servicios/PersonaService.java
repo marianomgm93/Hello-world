@@ -45,7 +45,7 @@ Método mostrarPersona que muestra la información de la persona deseada.*/
         int edad = fechaActual.getYear() - fechaNacimiento.getYear();
         if (fechaActual.getMonth()<fechaNacimiento.getMonth()) {
             edad--;
-        }else if(fechaActual.getMonth()==fechaNacimiento.getMonth() && fechaActual.getDay()<fechaNacimiento.getDay()){
+        }else if(fechaActual.getMonth()==fechaNacimiento.getMonth() && fechaActual.getDate()<fechaNacimiento.getDate()){
             edad--;
         }
         return edad;
@@ -62,7 +62,7 @@ Método mostrarPersona que muestra la información de la persona deseada.*/
         return calcularEdad(persona.getFechaNacimiento(),fechaActual())<edad;
     }
     public void mostrarPersona(Persona persona){
-        System.out.println("Nombre de la persona: "+persona.getNombre()+"\nFecha de nacimiento: "+persona.getFechaNacimiento().getDay()+"/"+persona.getFechaNacimiento().getMonth()+"/"+persona.getFechaNacimiento().getYear());
-        ;
+        System.out.println("Nombre de la persona: "+persona.getNombre()+"\nFecha de nacimiento: "+persona.getFechaNacimiento().getDate()+"/"+(persona.getFechaNacimiento().getMonth()+1)+"/"+(persona.getFechaNacimiento().getYear()+1900));
+        
     }
 }
