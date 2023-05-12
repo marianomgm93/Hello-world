@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio3">
+  <ClassDiagramComponents>
+    <Class name="Carta" package="" visibility="public" xPosition="67.0" yPosition="34.0">
+      <Fields>
+        <Field name="numero" type="Integer" visibility="private"/>
+        <Field name="palo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Baraja" package="" visibility="public" xPosition="323.0" yPosition="28.0">
+      <Fields>
+        <Field name="cartas" type="HashMap&lt;Carta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="barajar" returnType="void" visibility="public"/>
+        <Method name="siguienteCarta" returnType="void" visibility="public"/>
+        <Method name="cartasDisponibles" returnType="void" visibility="public"/>
+        <Method name="darCartas" returnType="void" visibility="public"/>
+        <Method name="cartasMonton" returnType="void" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Cartas" source="Baraja" target="Carta" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
