@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Persona1Servicios" package="Servicios" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="adoptar" returnType="void" visibility="public">
+          <Argument type="Persona1" name="persona"/>
+          <Argument type="Perro1" name="perro"/>
+        </Method>
+        <Method name="mostrarDatos" returnType="void" visibility="public">
+          <Argument type="Persona1" name="persona"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona1" package="Entidades" visibility="public" xPosition="32.0" yPosition="256.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="perros" type="ArrayList&lt;Perro1&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getPerros" returnType="ArrayList&lt;Perro1&gt;" visibility="public"/>
+        <Method name="setPerros" returnType="void" visibility="public">
+          <Argument type="Perro1" name="perros"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Perro1" package="Entidades" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="duegno" type="Persona1" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Persona1" name="duegno"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDuegno" returnType="Persona1" visibility="public"/>
+        <Method name="setDuegno" returnType="void" visibility="public">
+          <Argument type="Persona1" name="duegno"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="perros" source="Entidades.Persona1" target="Entidades.Perro1" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Perro1&gt;"/>
+    <UseRelation source="Servicios.Persona1Servicios" target="Entidades.Persona1" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="duegno" source="Entidades.Perro1" target="Entidades.Persona1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Persona1" target="Entidades.Perro1" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Entidades.Perro1" target="Entidades.Persona1" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Servicios.Persona1Servicios" target="Entidades.Perro1" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -14,7 +14,7 @@ public class ProductoServicio {
         String option;
         boolean flag=true;
         do {
-            Producto prod = new Producto();;
+            Producto prod = new Producto();
             System.out.println("Ingrese nombre del producto");
             prod.setNombre(sc.next());
             System.out.println("Ingrese precio del producto");
