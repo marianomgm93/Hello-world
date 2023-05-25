@@ -36,18 +36,31 @@ public class ElectrodomesticoService {
     /**
      * Metodo crearElectrodomestico(): le pide la información al usuario y llena el electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al precio se le da un valor base de $1000.
      */
-    public Electrodomestico crearElectrodomestico() {
+    public void crearElectrodomestico(Electrodomestico ele){
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese color");
         String color = comprobarColor(sc.next());
+        ele.setColor(color);
         System.out.println("Ingrese consumo");
         char consumo = comprobarConsumoEnergetico(sc.next().toUpperCase().charAt(0));
+        ele.setConsumo(consumo);
         System.out.println("Ingrese peso");
         double peso = sc.nextDouble();
-        Electrodomestico ele=new Electrodomestico(1000, color, consumo, peso);
+        ele.setPeso(peso);
         precioFinal(ele);
-        return ele;
     }
+//    public Electrodomestico crearElectrodomestico() {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Ingrese color");
+//        String color = comprobarColor(sc.next());
+//        System.out.println("Ingrese consumo");
+//        char consumo = comprobarConsumoEnergetico(sc.next().toUpperCase().charAt(0));
+//        System.out.println("Ingrese peso");
+//        double peso = sc.nextDouble();
+//        Electrodomestico ele=new Electrodomestico(1000, color, consumo, peso);
+//        precioFinal(ele);
+//        return ele;
+//    }
 //    Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
 //precio. Esta es la lista de precios:
 //    LETRA PRECIO

@@ -6,11 +6,12 @@ import java.util.Scanner;
 
 public class TelevisorService extends ElectrodomesticoService {
   
-    public Televisor crearTelevisor(){
+    public void crearTelevisor(Televisor ele){
         Scanner sc=new Scanner(System.in);
-        Electrodomestico ele=crearElectrodomestico();
+        super.crearElectrodomestico(ele);
         System.out.println("Ingrese resolucion en pulgadas");
         int pulgadas=sc.nextInt();
+        ele.setResolucion(pulgadas);
         System.out.println("Sintonizador tdt? s/n ");
         String opt=sc.next();
         boolean tdt;
@@ -19,9 +20,8 @@ public class TelevisorService extends ElectrodomesticoService {
         }else{
             tdt=false;
         }
-        Televisor tv=new Televisor(pulgadas, tdt, ele.getPrecio(), ele.getColor(), ele.getConsumo(), ele.getPeso());
-        precioFinal(tv);
-        return tv;
+        ele.setTdt(tdt);
+        precioFinal(ele);
     }
     
     private void precioFinal(Televisor tv){

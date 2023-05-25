@@ -2,6 +2,9 @@ package Main;
 //Crear una superclase llamada Electrodoméstico con los siguientes atributos: precio, color,
 //consumo energético (letras entre A y F) y peso.
 
+import Entidades.Electrodomestico;
+import Entidades.Lavadora;
+import Entidades.Televisor;
 import Servicios.ElectrodomesticoService;
 import Servicios.LavadoraService;
 import Servicios.TelevisorService;
@@ -78,9 +81,13 @@ public class Ejercicio2 {
         LavadoraService lavaSv=new LavadoraService();
         ElectrodomesticoService eleSv=new ElectrodomesticoService();
         TelevisorService tvSv=new TelevisorService();
-//        System.out.println(eleSv.crearElectrodomestico());
-//        System.out.println(lavaSv.crearLavadora());
-        System.out.println(tvSv.crearTelevisor());
+        Electrodomestico lavadora=new Lavadora();
+        Electrodomestico tv=new Televisor();
+//        eleSv.crearElectrodomestico();
+        lavaSv.crearLavadora((Lavadora) lavadora);
+        tvSv.crearTelevisor((Televisor) tv);
+        System.out.println(lavadora);
+        System.out.println(tv);
     }
 
 }
