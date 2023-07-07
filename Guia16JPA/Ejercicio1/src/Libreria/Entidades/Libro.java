@@ -1,22 +1,19 @@
-package Libreria.Entidades;
+package libreria.entidades;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 @Entity
-public class Libro {
+public class Libro implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private Long isbn;
     private String titulo;
     
     private Integer anio;
     private Integer ejemplares;
     private Integer ejemplaresPrestados;
     private Integer ejemplaresRestantes;
-    private long isbn;
     private boolean alta=true;
     @OneToOne
     private Autor autor;
@@ -26,21 +23,23 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String titulo, Integer anio, Integer ejemplares, long isbn, Autor autor, Editorial editorial) {
+    public Libro(Long isbn, String titulo, Integer anio, Integer ejemplares, Autor autor, Editorial editorial) {
+        this.isbn = isbn;
         this.titulo = titulo;
         this.anio = anio;
         this.ejemplares = ejemplares;
-        this.isbn = isbn;
         this.autor = autor;
         this.editorial = editorial;
     }
 
-    public Long getId() {
-        return id;
+
+
+    public Long getIsbn() {
+        return isbn;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIsbn(Long isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitulo() {
@@ -82,15 +81,6 @@ public class Libro {
     public void setEjemplaresRestantes(Integer ejemplaresRestantes) {
         this.ejemplaresRestantes = ejemplaresRestantes;
     }
-
-    public long getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
-    }
-
     public boolean isAlta() {
         return alta;
     }
