@@ -14,12 +14,6 @@ public class EditorialDAO extends DAO<Editorial> {
         Editorial editorial = buscarPorId(id);
         super.editar(editorial);
     }
-//    public Editorial buscarPorNombre(String nombre){
-//        conectar();
-//        Editorial editorial= em.find(Editorial.class, nombre);
-//        desconectar();
-//        return editorial;
-//    }
 
     public Editorial buscarPorId(Long id) throws Exception {
         conectar();

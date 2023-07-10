@@ -25,7 +25,7 @@ public class LibroDAO extends DAO<Libro> {
 //    }
 
     @Override
-    public void editar(Libro libro){
+    public void editar(Libro libro) {
         super.editar(libro);
     }
 
@@ -36,12 +36,25 @@ public class LibroDAO extends DAO<Libro> {
         return libro;
     }
 
-    public List<Libro> buscarPorTitulo(String nombre) throws Exception{
+    public Libro buscarPorTitulo(String nombre) throws Exception {
         conectar();
-        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE titulo= " + nombre)
-                .getResultList();
-        desconectar();
-        return libros;
+        try {
+
+            List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE li.titulo= '" + nombre+"'").getResultList();
+            if (!libros.isEmpty()) {
+                Libro libro = libros.get(0);
+                return libro;
+            } else {
+                System.out.println("No hay ningun libro con el nombre: " + nombre);
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println("Buscar por nombre error");
+            ex.printStackTrace();
+            return null;
+        } finally {
+            desconectar();
+        }
     }
 
     public List<Libro> buscarPorAutor(String nombre) throws Exception {
@@ -60,12 +73,27 @@ public class LibroDAO extends DAO<Libro> {
         return libros;
     }
 
-    public List<Libro> buscarPorIsbn(Long isbn) throws Exception {
-        conectar();
-        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE isbn= " + isbn)
-                .getResultList();
-        desconectar();
-        return libros;
+    public Libro buscarPorIsbn(Long isbn) throws Exception {
+        try {
+            conectar();
+            List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE isbn= " + isbn)
+                    .getResultList();
+            if (!libros.isEmpty()) {
+                Libro libro = libros.get(0);
+                return libro;
+            } else {
+                System.out.println("No hay ningun libro con el codigo: " + isbn);
+                return null;
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Buscar libro por ISBN ERROR");
+            ex.printStackTrace();
+            return null;
+        } finally {
+            desconectar();
+        }
+
     }
 
     public List<Libro> listarTodos() throws Exception {

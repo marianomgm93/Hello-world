@@ -9,12 +9,17 @@ public class AutorServicio {
     private AutorDAO adao = new AutorDAO();
     private Scanner sc = new Scanner(System.in);
 
-    public Autor guardarAutor() {
+    public void guardarAutor() {
         System.out.println("Ingrese nombre del autor");
+
         String nombre = sc.next();
-        Autor autor = new Autor(nombre);
-        adao.guardar(autor);
-        return autor;
+        if (adao.buscarPorNombre(nombre) == null) {
+            Autor autor = new Autor(nombre);
+            adao.guardar(autor);
+        }else{
+            System.out.println("El autor ya existe");
+        }
+        
     }
 
     public Autor guardarAutor(String nombre) {

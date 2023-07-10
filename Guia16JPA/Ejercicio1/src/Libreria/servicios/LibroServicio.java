@@ -22,6 +22,11 @@ public class LibroServicio {
             Libro libro = new Libro();
             System.out.println("Ingrese titulo del libro");
             String titulo = sc.next();
+            if (ldao.buscarPorTitulo(titulo)!=null) {
+                libro=ldao.buscarPorTitulo(titulo);
+                libro.setEjemplares(libro.getEjemplares()+1);
+                ldao.editar(libro);
+            }else{
             libro.setTitulo(titulo);
             System.out.println("Ingrese autor del libro");
             String nombre = sc.next();
@@ -46,6 +51,7 @@ public class LibroServicio {
             System.out.println("Ingrese ISBN");
             libro.setIsbn(sc.nextLong());
             ldao.guardar(libro);
+            }
         } catch (Exception ex) {
             System.out.println("Error libro servicio");
             ex.printStackTrace();
@@ -63,7 +69,7 @@ public class LibroServicio {
             String nombre = sc.next();
             Autor autor = adao.buscarPorNombre(nombre);
             if (autor == null) {
-                autor = aServ.guardarAutor();
+                autor = aServ.guardarAutor(nombre);
             }
             libro.setAutor(autor);
             System.out.println("Ingrese el anio");
@@ -77,6 +83,10 @@ public class LibroServicio {
             libro.setEditorial(editorial);
             System.out.println("Ingrese ejemplares");
             int ejemplares = sc.nextInt();
+            if(ejemplares<0){
+                ejemplares=0;
+                throw new Exception("No puede haber ejemplares negativos!!");
+            }
             libro.setEjemplares(ejemplares);
             libro.setEjemplaresRestantes(ejemplares);
             ldao.editar(libro);

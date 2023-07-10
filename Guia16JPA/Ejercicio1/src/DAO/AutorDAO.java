@@ -29,7 +29,7 @@ public class AutorDAO extends DAO<Autor> {
             }
         
         }catch(Exception ex){
-            System.out.println("Buscar por nombre error");
+            System.out.println("Buscar por nombre de autor error");
             ex.printStackTrace();
             return null;
         }finally{
