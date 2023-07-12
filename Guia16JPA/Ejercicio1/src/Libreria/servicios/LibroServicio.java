@@ -1,13 +1,11 @@
 package libreria.servicios;
 
 import DAO.*;
+import java.util.List;
 import libreria.entidades.Autor;
 import libreria.entidades.Editorial;
 import libreria.entidades.Libro;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class LibroServicio {
 
     private Scanner sc = new Scanner(System.in).useDelimiter("\n");
@@ -120,4 +118,12 @@ public class LibroServicio {
             ex.printStackTrace();
         }
     }
+    public void verLibros() throws Exception{
+        System.out.println("Mostrando todos los libros en posesion:");
+        List<Libro> libros=ldao.listarTodos();
+        for (Libro libro : libros) {
+            System.out.println(libro);
+        }
+    }
+
 }

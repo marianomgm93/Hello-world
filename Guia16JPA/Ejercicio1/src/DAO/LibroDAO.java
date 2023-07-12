@@ -2,6 +2,8 @@ package DAO;
 
 import libreria.entidades.Libro;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LibroDAO extends DAO<Libro> {
 // Esta clase hereda de la clase padre DAO y vemos que
@@ -16,6 +18,7 @@ public class LibroDAO extends DAO<Libro> {
 
     public void eliminar(Long id) throws Exception {
         Libro libro = buscarPorId(id);
+        libro.setAlta(false);
         super.eliminar(libro);
     }
 //    public Libro buscarPorNombre(String nombre){
@@ -76,7 +79,7 @@ public class LibroDAO extends DAO<Libro> {
     public Libro buscarPorIsbn(Long isbn) throws Exception {
         try {
             conectar();
-            List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE isbn= " + isbn)
+            List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE li.isbn= " + isbn)
                     .getResultList();
             if (!libros.isEmpty()) {
                 Libro libro = libros.get(0);
@@ -103,5 +106,22 @@ public class LibroDAO extends DAO<Libro> {
         desconectar();
         return libros;
     }
+    
+    public void prestarLibro(Long id){
+        try {
+            Libro libro = buscarPorIsbn(id);
 
+        if (libro.getEjemplaresRestantes()>0) {
+            libro.setEjemplaresPrestados(libro.getEjemplaresPrestados()+1);
+            libro.setEjemplaresRestantes(libro.getEjemplaresRestantes()-1);
+            editar(libro);
+        }else{
+            System.out.println("SIN STOCK");
+        }
+        } catch (Exception ex) {
+            System.out.println("PRESTAR LIBRO ERROR");
+            ex.printStackTrace();
+        }
+        
+    }
 }

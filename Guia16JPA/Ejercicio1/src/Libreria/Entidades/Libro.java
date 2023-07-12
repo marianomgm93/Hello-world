@@ -12,8 +12,8 @@ public class Libro implements Serializable {
     
     private Integer anio;
     private Integer ejemplares;
-    private Integer ejemplaresPrestados;
-    private Integer ejemplaresRestantes;
+    private Integer ejemplaresPrestados=0;
+    private Integer ejemplaresRestantes=ejemplares;
     private boolean alta=true;
     @OneToOne
     private Autor autor;
@@ -103,6 +103,11 @@ public class Libro implements Serializable {
 
     public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" + "isbn=" + isbn + ", titulo=" + titulo + ", anio=" + anio + ", ejemplares=" + ejemplares + ", ejemplaresPrestados=" + ejemplaresPrestados + ", ejemplaresRestantes=" + ejemplaresRestantes + ", autor=" + autor + ", editorial=" + editorial + '}';
     }
     
     

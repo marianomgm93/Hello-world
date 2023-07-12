@@ -46,6 +46,7 @@ public class EditorialDAO extends DAO<Editorial> {
 
     public void eliminar(Long id) throws Exception {
         Editorial editorial = buscarPorId(id);
+        editorial.setAlta(false);
         super.eliminar(editorial);
     }
 

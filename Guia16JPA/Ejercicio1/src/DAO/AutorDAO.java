@@ -35,13 +35,11 @@ public class AutorDAO extends DAO<Autor> {
         }finally{
             desconectar();
         }
-        
-        
-        
     }
     
     public void eliminar(Long id) throws Exception{
         Autor autor=buscarPorId(id);
+        autor.setAlta(false);
         super.eliminar(autor);
     }
     public void editar(Long id) throws Exception{
