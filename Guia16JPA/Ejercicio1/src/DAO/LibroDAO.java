@@ -61,19 +61,43 @@ public class LibroDAO extends DAO<Libro> {
     }
 
     public List<Libro> buscarPorAutor(String nombre) throws Exception {
-        conectar();
-        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE autor= " + nombre)
+        try{
+            conectar();
+        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE li.autor= '" + nombre+"'")
                 .getResultList();
-        desconectar();
-        return libros;
+        if(!libros.isEmpty()){
+            return libros;
+        }else{
+            System.out.println("No se encontraron libros de esa editorial");
+            return null;
+        }
+        }catch(Exception ex){
+            System.out.println("BUSCAR POR EDITORIAL ERROR");
+            ex.printStackTrace();
+            return null;
+        }finally{
+            desconectar();
+        }
     }
 
     public List<Libro> buscarPorEditorial(String nombre) throws Exception {
-        conectar();
-        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE editorial= " + nombre)
+        try{
+             conectar();
+        List<Libro> libros = em.createQuery("SELECT li FROM Libro li WHERE li.editorial= '" + nombre+"'")
                 .getResultList();
-        desconectar();
-        return libros;
+        if(!libros.isEmpty()){
+            return libros;
+        }else{
+            System.out.println("No se encontraron libros de esa editorial");
+            return null;
+        }
+        }catch(Exception ex){
+            System.out.println("BUSCAR POR EDITORIAL ERROR");
+            ex.printStackTrace();
+            return null;
+        }finally{
+            desconectar();
+        }
     }
 
     public Libro buscarPorIsbn(Long isbn) throws Exception {
