@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registrar un usuario</h1>
+    <form action="Registrar un usuario" method="post" enctype="multipart/form-data" ></form>
+        <label for="user">Nombre del usuario</label> <br>
+        <input type="text" name="usuario" id="user" placeholder="nombre de usuario"> <br>
+        <label for="pass">Contraseña del usuario</label> <br>
+        <input type="password" name="pass" id="pass" placeholder="88888888"> <br>
+        <label for="edad">Edad del usuario</label><br>
+        <input type="number" name="edad" id="edad" placeholder="00"><br>
+        <label for="born">Fecha de nacimiento del usuario</label><br>
+        <input type="date" name="fecha" id="born" ><br>
+        <label for="gender">Sexo del usuario</label><br>
+        <input type="radio" name="gender" value="Hombre">Hombre <br>
+        <input type="radio" name="gender" value="Mujer">Mujer <br>
+        <input type="radio" name="gender" value="Seguido">Seguido <br>
+        <input type="radio" name="gender" value="Otro">Otro <br> <br>
+        <label for="pais">Pais del usuario</label><br>
+        <select name="pais" id="pais">
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Formosa">Formosa</option>
+            <option value="Otro">Otro</option>
+        </select><br><br>
+        <button type="submit">Enviar</button> <button type="reset">Borrar</button>
+</body>
+</html>

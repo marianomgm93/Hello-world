@@ -1,0 +1,46 @@
+main{
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.alert-primary{
+    background-color:  #FDFFFC;
+    color:#235789;
+    border-style: outset;
+}
+.alert-primary:hover{
+    background-color: #235789;
+    color: #FDFFFC;
+    border-radius: 15px;
+}
+
+.alert-dark{
+    background-color: #235789;
+    color: #F1D302;
+}
+.alert-dark:hover{
+    background-color: #F1D302;
+    color: #235789;
+    border-radius:15px;
+}
+.alert-danger{
+    background-color: #C1292E;
+    color: #161925;
+}
+.alert-danger:hover{
+    background-color: #161925;
+    color:  #C1292E;
+    border-radius:15px;
+}
+.alert-secondary{
+    background-color: #161925;
+    color: #FDFFFC;
+}
+.alert-secondary:hover{
+    background-color:#FDFFFC;
+    color:#161925;
+    border-radius:15px;
+}

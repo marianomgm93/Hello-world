@@ -1,0 +1,44 @@
+.nav{
+    background: radial-gradient(circle, rgba(224,10,10,1) 0%, rgba(27,23,24,1) 100%);
+
+}
+.nav-link{
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+body{
+    background: radial-gradient(circle, rgba(224,10,10,1) 0%, rgba(27,23,24,1) 100%);
+}
+.nav-link:hover{
+    color: aliceblue;
+}
+.bg{
+    width: 100%;
+}
+.imagen{
+    width: 50%;
+}
+.carta{
+    display: flex;
+    
+    background: radial-gradient(circle, rgba(224,10,10,1) 0%, rgba(27,23,24,1) 100%);
+    color: black;
+    width: 50%;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardPadre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+*{
+    text-align: center;
+}

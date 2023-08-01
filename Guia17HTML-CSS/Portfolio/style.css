@@ -1,0 +1,50 @@
+body{
+    background-color: rgba(34, 32, 32, 0.849);
+}
+#nombre{
+    color: aquamarine;
+}
+.nav-link:hover{
+    transition: 0.5s;
+    color:aquamarine !important
+}
+.navbar-toggler{
+    background-color: white;
+}
+.navbar-toggler:hover{
+    transition: 0.5s;
+    background-color:aquamarine;
+}
+.foto{
+    
+    border-radius: 100%;
+    height: 170px;
+    width: 148px;
+}
+.fondo{
+    position: fixed;
+    z-index:-1;
+    opacity: 60%;
+    width: 100vw;
+    height: 100vh;
+    
+}
+.card{
+    
+    border-bottom-left-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+}
+
+.bi{
+    color: aliceblue;
+    font-size: 3vh;   
+}
+.bi:hover{
+    transition: 0.7s;
+    color:aquamarine;
+}
+#card{
+    max-width: 250px;
+    min-width: 250px;
+
+}

@@ -1,20 +1,4 @@
-package libreria;
-
-import java.util.Scanner;
-import libreria.servicios.AutorServicio;
-import libreria.servicios.ClienteServicio;
-import libreria.servicios.EditorialServicio;
-import libreria.servicios.LibroServicio;
-import libreria.servicios.PrestamoServicio;
-import org.eclipse.persistence.config.PersistenceUnitProperties;
-
-public class Main {
-   
-    
-    public static void main(String[] args) throws Exception {
-        //LibroServicio ls=new LibroServicio();
-        //PrestamoServicio pserv=new PrestamoServicio();
-         Scanner leer = new Scanner(System.in).useDelimiter("\n");
+   Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
         AutorServicio as = new AutorServicio();
         EditorialServicio es = new EditorialServicio();
@@ -88,7 +72,7 @@ public class Main {
                     as.consultarAutorPorNombre();
                     break;
                 case 4:
-                    ls.buscarLibroMenu();
+                    ls.buscarLibro();
                     break;
                 case 5:
                     ps.crearPrestamo();
@@ -110,11 +94,3 @@ public class Main {
         } while (menu);
 
     }
-       // pserv.crearPrestamo();
-        //System.setProperty(PersistenceUnitProperties.ECLIPSELINK_PERSISTENCE_XML,"main/cis-db-sync-0.0.1-SNAPSHOT.jar!/META-INF/persistence.xml");
-        //lserv.guardarLibro();
-        
-        //lserv.editarLibro();
-        //lserv.modificarAlta();
-    
-}

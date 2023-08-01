@@ -51,7 +51,7 @@ venta, mostrando en primer lugar los de mayor precio.*/
 SELECT * FROM producto WHERE gama='ornamentales' AND cantidad_en_stock>100 ORDER BY  precio_venta desc;
 /*16. Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y cuyo
 representante de ventas tenga el código de empleado 11 o 30.*/
-SELECT * FROM cliente WHERE ciudad='madrid' and (codigo_empleado_rep_ventas=11 OR codigo_empleado_rep_ventas=30);
+SELECT * FROM cliente WHERE ciudad='madrid' and codigo_empleado_rep_ventas in (11,30);
 /*Consultas multitabla (Composición interna)
 Las consultas se deben resolver con INNER JOIN.
 1. Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante
@@ -82,5 +82,31 @@ INNER JOIN empleado em on em.codigo_empleado=cl.codigo_empleado_rep_ventas
 INNER JOIN oficina ofi on ofi.codigo_oficina=em.codigo_oficina
 WHERE pa.codigo_cliente IS NULL;
 /*6. Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.*/
-SELECT ofi.codigo_oficina
+SELECT ofi.linea_direccion1,ofi.linea_direccion2 from oficina ofi
+INNER JOIN empleado em on em.codigo_oficina=ofi.codigo_oficina
+INNER JOIN cliente cl on cl.codigo_empleado_rep_ventas=em.codigo_empleado
+WHERE cl.ciudad='Fuenlabrada';
+/*7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad
+de la oficina a la que pertenece el representante.*/
+SELECT cl.nombre_cliente,em.nombre,ofi.ciudad from oficina ofi
+INNER JOIN empleado em on em.codigo_oficina=ofi.codigo_oficina
+INNER JOIN cliente cl on cl.codigo_empleado_rep_ventas=em.codigo_empleado;
+/*8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.*/
+SELECT em.nombre as 'nombre empleado' ,
+(SELECT nombre FROM empleado em2 WHERE em.codigo_jefe=em2.codigo_empleado) as 'nombre jefe' 
+FROM empleado em;
+/*9. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.*/
+SELECT cl.nombre_cliente FROM cliente cl
+INNER JOIN pedido pe on pe.codigo_cliente=cl.codigo_cliente
+WHERE pe.fecha_entrega>pe.fecha_esperada;
+/*10. Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.*/
+SELECT  ,cl.nombre_cliente FROM producto pr
+INNER JOIN detalle_pedido dp on dp.codigo_producto=pr.codigo_producto
+INNER JOIN pedido pe on pe.codigo_pedido=dp.codigo_pedido
+INNER JOIN cliente cl on cl.codigo_cliente=pe.codigo_cliente
+
+
+
+
+
 

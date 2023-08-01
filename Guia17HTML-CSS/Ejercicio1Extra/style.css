@@ -1,0 +1,25 @@
+body{
+    background-color: #CEE6F3;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BA704F;
+}
+.list-group-item{
+    background-color: #CEE6F3;
+    width: 30%;
+    
+}
+.list-group-item:hover{
+    background-color: #BA704F;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: #6C3428;
+}
+.nav-item:hover{
+    border-radius: 5px;
+    background-color: #BA704F;
+}

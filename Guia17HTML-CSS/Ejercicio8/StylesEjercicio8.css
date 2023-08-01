@@ -1,0 +1,51 @@
+header{
+  position: sticky;
+  top: 0;
+  background:radial-gradient(red,black
+  );
+  
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+nav{
+  margin: 0%;
+  padding: 0%;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0%;
+  margin: 0%;
+  
+}
+li {
+
+  margin: 1%;
+  border: 1px,white;
+}
+body{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0%;
+
+}
+main{
+  margin: 1%;
+}
+nav a{
+  color: aliceblue;
+  text-decoration: none;
+}
+nav a:hover{
+  color: blueviolet;
+}
+.fondo{
+  margin: 0%;
+  padding: 0%;
+  position: fixed;
+  z-index: -1;
+  
+
+}
