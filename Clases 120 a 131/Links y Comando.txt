@@ -1,0 +1,3 @@
+Link de descarga de notepad++  -->  https://notepad-plus-plus.org/downloads/
+
+Fragmento a copiar -->        -J-Djdk.lang.Process.allowAmbiguousCommands=true

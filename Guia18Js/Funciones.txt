@@ -1,0 +1,31 @@
+    querySelector() / querySelectorAll(): Estas funciones te permiten seleccionar elementos del DOM (Document Object Model) utilizando selectores CSS. querySelector() devuelve el primer elemento que coincide, mientras que querySelectorAll() devuelve una lista de todos los elementos que coinciden.
+
+    getElementById(): Esta función te permite seleccionar un elemento por su ID único.
+
+    addEventListener(): Te permite añadir un evento a un elemento HTML para que ejecute una función JavaScript cuando ocurra dicho evento, como un clic o una pulsación de tecla.
+
+    innerHTML: Con esta propiedad puedes acceder y modificar el contenido HTML dentro de un elemento. Ten en cuenta que usar innerHTML puede tener implicaciones de seguridad, especialmente si insertas contenido proporcionado por el usuario.
+
+    createElement(): Te permite crear nuevos elementos HTML desde JavaScript, que luego pueden ser agregados al DOM.
+
+    appendChild() / removeChild(): Estas funciones te permiten agregar y eliminar elementos hijos dentro de otros elementos en el DOM.
+
+    setAttribute() / getAttribute(): Con setAttribute() puedes establecer atributos en elementos HTML, y con getAttribute() puedes obtener el valor de un atributo existente.
+
+    classList: Esta propiedad te permite manipular las clases CSS de un elemento. Puedes usar classList.add(), classList.remove(), classList.toggle() y más para cambiar las clases de un elemento.
+
+    style: Puedes usar la propiedad style para acceder y modificar las propiedades de estilo de un elemento, como color de fondo, tamaño de fuente, etc.
+
+    Event Object: Cuando manejas eventos en JavaScript, se pasa un objeto de evento que contiene información sobre el evento, como el tipo de evento, el elemento objetivo, las coordenadas del puntero, etc.
+
+    localStorage / sessionStorage: Estas API te permiten almacenar datos en el navegador para su uso posterior. localStorage mantiene los datos incluso después de cerrar el navegador, mientras que sessionStorage los mantiene solo durante la sesión actual.
+
+    Ajax (XMLHttpRequest o fetch): Para realizar solicitudes HTTP asíncronas y obtener o enviar datos desde y hacia un servidor.
+
+    setTimeout() / setInterval(): Estas funciones te permiten ejecutar una función después de un período de tiempo o de forma repetida a intervalos.
+
+    JSON.parse() / JSON.stringify(): Para convertir datos entre formato JSON (JavaScript Object Notation) y objetos JavaScript.
+
+    Event Bubbling / Event Capturing: Entender cómo funcionan estos dos conceptos te ayudará a manejar mejor los eventos en elementos anidados en el DOM.
+
+    innerText: La propiedad innerText te permite acceder y modificar el contenido de texto visible de un elemento HTML. A diferencia de innerHTML, que también incluye contenido HTML, innerText solo trata con el texto visible en la pantalla.
